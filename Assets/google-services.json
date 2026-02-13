@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "893166283753",
+    "firebase_url": "https://farminggame-6730e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "farminggame-6730e",
+    "storage_bucket": "farminggame-6730e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893166283753:android:da9a20ec99b8b2d6f63978",
+        "android_client_info": {
+          "package_name": "com.itshoang.game2d"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAChsmHuzjQ5yEj_qoTLS4GE4SqBQ6nejo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

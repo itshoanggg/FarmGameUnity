@@ -9,6 +9,8 @@ UserSettings/
 
 MemoryCaptures/
 Recordings/
+# Firebase large plugins
+Assets/Firebase/Plugins/x86_64/
 
 # IDE
 .vscode/
