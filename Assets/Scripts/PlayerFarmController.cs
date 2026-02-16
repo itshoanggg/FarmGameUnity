@@ -13,6 +13,12 @@ public class PlayerFarmController : MonoBehaviour
     public TileBase tb_Grass; 
     public TileBase tb_Tree;
 
+    private RecyclableInventoryManager inventoryManager;
+
+    private void Start()
+    {
+        inventoryManager = GameObject.Find("InventoryManager").GetComponent<RecyclableInventoryManager>();
+    }
 
     private void Update()
     {
@@ -44,6 +50,28 @@ public class PlayerFarmController : MonoBehaviour
                 tm_Tree.SetTile(cellPos, tb_Tree);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Vector3Int cellPos = tm_Ground.WorldToCell(transform.position);
+
+            TileBase currTileBase = tm_Tree.GetTile(cellPos);
+
+            if (currTileBase != null)
+            {
+                tm_Grass.SetTile(cellPos, tb_Grass);
+                tm_Tree.SetTile(cellPos, null);
+
+                InvenItems itemFlower = new InvenItems();  
+                itemFlower.name = "Flower";
+                itemFlower.description = "A beautiful flower.";
+
+                inventoryManager.AddInventoryItem(itemFlower);
+            }
+
+        }
+
+
 
     }
 }

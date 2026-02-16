@@ -10,6 +10,8 @@ public class RecyclableInventoryManager : MonoBehaviour, IRecyclableScrollRectDa
     [SerializeField]
     private int _dataLength;
 
+    public GameObject inventoryGameObject;
+
     private List<InvenItems> _inventItems = new List<InvenItems>();
     
     private void Awake()
@@ -59,5 +61,18 @@ public class RecyclableInventoryManager : MonoBehaviour, IRecyclableScrollRectDa
             _inventItems.Add(newItem);
             _recyclableScrollRect.ReloadData();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //inventoryGameObject.SetActive(!inventoryGameObject.activeSelf);
+            Vector3 currPosInven = inventoryGameObject.GetComponent<RectTransform>().anchoredPosition;
+            inventoryGameObject.GetComponent<RectTransform>().anchoredPosition = currPosInven.y == 1000 ? Vector3.zero : new Vector3(0, 1000, 0);
+        }
+    }
+
+    public void AddInventoryItem(InvenItems item)
+    {
+        _inventItems.Add(item);
+        _recyclableScrollRect.ReloadData();
     }
 }

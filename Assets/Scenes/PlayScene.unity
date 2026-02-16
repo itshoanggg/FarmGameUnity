@@ -3125,6 +3125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recyclableScrollRect: {fileID: 788441492}
   _dataLength: 10
+  inventoryGameObject: {fileID: 788441491}
 --- !u!4 &1582129485
 Transform:
   m_ObjectHideFlags: 0
