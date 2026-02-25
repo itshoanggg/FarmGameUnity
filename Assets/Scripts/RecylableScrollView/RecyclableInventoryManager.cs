@@ -35,6 +35,8 @@ public class RecyclableInventoryManager : MonoBehaviour, IRecyclableScrollRectDa
 
     private void Start()
     {
+        inventoryGameObject.SetActive(false);
+
         List<InvenItems> invenItems = new List<InvenItems>();
         for(int i = 0; i < 50; i++)
         {
@@ -49,7 +51,6 @@ public class RecyclableInventoryManager : MonoBehaviour, IRecyclableScrollRectDa
     public void SetListItems(List<InvenItems> invenItems)
     {
         _inventItems = invenItems;
-        _recyclableScrollRect.ReloadData();
     }
 
 
@@ -64,15 +65,24 @@ public class RecyclableInventoryManager : MonoBehaviour, IRecyclableScrollRectDa
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            //inventoryGameObject.SetActive(!inventoryGameObject.activeSelf);
-            Vector3 currPosInven = inventoryGameObject.GetComponent<RectTransform>().anchoredPosition;
-            inventoryGameObject.GetComponent<RectTransform>().anchoredPosition = currPosInven.y == 1000 ? Vector3.zero : new Vector3(0, 1000, 0);
+            bool isOpening = !inventoryGameObject.activeSelf;
+
+            inventoryGameObject.SetActive(isOpening);
+
+            if (isOpening)
+            {
+                _recyclableScrollRect.ReloadData();
+            }
         }
     }
 
     public void AddInventoryItem(InvenItems item)
     {
         _inventItems.Add(item);
-        _recyclableScrollRect.ReloadData();
+
+        if (inventoryGameObject.activeInHierarchy)
+        {
+            _recyclableScrollRect.ReloadData();
+        }
     }
 }

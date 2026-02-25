@@ -15,11 +15,7 @@ public class FirebaseDatabaseManager : MonoBehaviour
         reference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
-    private void Start()
-    {
-        TilemapDetails details = new TilemapDetails(1, 1, TilemapState.Ground);
-        WriteDatabase("tile_1_1", details.ToString());
-    }
+
 
     public void WriteDatabase(string id, string message)
     {
