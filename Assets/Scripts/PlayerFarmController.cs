@@ -14,6 +14,7 @@ public class PlayerFarmController : MonoBehaviour
     public TileBase tb_Tree;
 
     private RecyclableInventoryManager inventoryManager;
+    public TileMapManager tileMapManager;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class PlayerFarmController : MonoBehaviour
             if(currTileBase == tb_Grass)
             {
                 tm_Grass.SetTile(cellPos, null);
+                tileMapManager.SetStateForTilemapDetail(cellPos.x, cellPos.y, TilemapState.Ground);
             }
         }
         if (Input.GetKeyDown(KeyCode.V))
@@ -48,6 +50,7 @@ public class PlayerFarmController : MonoBehaviour
             if (currTileBase == null)
             {
                 tm_Tree.SetTile(cellPos, tb_Tree);
+                tileMapManager.SetStateForTilemapDetail(cellPos.x, cellPos.y, TilemapState.Tree);
             }
         }
 

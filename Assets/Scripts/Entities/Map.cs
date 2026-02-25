@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Map
 {
-    public List<TilemapDetails> map { get; set; }
+    public List<TilemapDetails> _listTileMapDetail { get; set; }
 
     public Map()
     {
     }
 
-    public Map(List<TilemapDetails> map)
+    public Map(List<TilemapDetails> listTileMapDetail)
     {
-        this.map = map;
+        this._listTileMapDetail = listTileMapDetail;
     }
 
     public override string ToString()
@@ -23,6 +23,6 @@ public class Map
 
     public int GetMapSize()
     {
-        return map.Count;
+        return _listTileMapDetail.Count;
     }
 }

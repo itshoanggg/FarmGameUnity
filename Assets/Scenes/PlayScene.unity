@@ -679,6 +679,7 @@ MonoBehaviour:
   tb_Ground: {fileID: 11400000, guid: c7c34ec125d5692489b153eff005955f, type: 2}
   tb_Grass: {fileID: 11400000, guid: 78bb42c4a785a1340ba83cc2e69f9067, type: 2}
   tb_Tree: {fileID: 11400000, guid: 290071d9dc5d2c94798e8c7af9b72a00, type: 2}
+  tileMapManager: {fileID: 1211291922}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +3090,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tm_Ground: {fileID: 1041612011}
+  tm_Grass: {fileID: 1655343677}
+  tm_Tree: {fileID: 197206068}
+  tb_Tree: {fileID: 11400000, guid: 290071d9dc5d2c94798e8c7af9b72a00, type: 2}
 --- !u!4 &1211291923
 Transform:
   m_ObjectHideFlags: 0
